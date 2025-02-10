@@ -3,7 +3,10 @@ kind: Ingress
 metadata:
   name: flask-ingress
   namespace: flask-app
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
+  ingressClassName: nginx
   rules:
     - host: flask.local
       http:
@@ -15,4 +18,3 @@ spec:
                 name: flask-service
                 port:
                   number: 5000
-
