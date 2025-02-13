@@ -5,7 +5,7 @@ metadata:
   namespace: flask-app
 spec:
   serviceName: "mongo"
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: mongo
